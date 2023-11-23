@@ -36,6 +36,13 @@ O projeto está estruturado da seguinte maneira:
   - `MenuController.java`: Controlador responsável pela lógica da interface do menu principal.
 - `src/main/resources/br/com/projeto/redesocial`: Contém os arquivos FXML e recursos visuais.
 
+## Funcionalidades
+
+- Login de usuários
+- Exibição e gerenciamento de lista de amigos
+- Envio e recebimento de mensagens
+- Adição e remoção de amigos
+
 ## Integrantes
 
 Este projeto foi desenvolvido por:
@@ -49,15 +56,8 @@ Este projeto foi desenvolvido por:
 - *Thiago Henrique Adão*
   - RA: 12113928
 
-- *Vinícius de Aquino Reis*
+- *Vinícius Aquino*
   - RA: 12118578
 
-- *Vinícius Ribeiro*
+- *Vinícius Ribeiro Palhares*
   - RA: 12118124
-
-## Funcionalidades
-
-- Login de usuários
-- Exibição e gerenciamento de lista de amigos
-- Envio e recebimento de mensagens
-- Adição e remoção de amigos
