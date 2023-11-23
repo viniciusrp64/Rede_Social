@@ -36,6 +36,25 @@ O projeto está estruturado da seguinte maneira:
   - `MenuController.java`: Controlador responsável pela lógica da interface do menu principal.
 - `src/main/resources/br/com/projeto/redesocial`: Contém os arquivos FXML e recursos visuais.
 
+## Integrantes
+
+Este projeto foi desenvolvido por:
+
+- *Matheus Fernandes*
+  - RA: 12116183
+
+- *Talita Paiva Diniz*
+  - RA: 12114621
+
+- *Thiago Henrique Adão*
+  - RA: 12113928
+
+- *Vinícius de Aquino Reis*
+  - RA: 12118578
+
+- *Vinícius Ribeiro*
+  - RA: 12118124
+
 ## Funcionalidades
 
 - Login de usuários
