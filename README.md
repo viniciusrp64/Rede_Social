@@ -1,57 +1,44 @@
----
 
-## Documentação do Esquema do Banco de Dados - Rede Social
+# Rede Social em JavaFX
 
-### Banco de Dados
-- **Nome**: RedeSocial
+Este projeto é uma aplicação de rede social desenvolvida em Java, utilizando a biblioteca JavaFX para a interface gráfica do usuário. A aplicação permite aos usuários interagirem através de mensagens e manterem uma lista de amigos. O sistema utiliza um banco de dados MySQL para armazenar as informações dos usuários, suas sessões, amizades e mensagens trocadas.
 
-### Tabelas
+## Requisitos
 
-#### 1. USUARIO
-- **Descrição**: Armazena informações dos usuários da rede social.
-- **Colunas**:
-  - `COD_USUARIO`: ID do usuário (chave primária, auto-incremento).
-  - `NOM_USUARIO`: Nome de usuário.
-  - `DES_SENHA`: Senha do usuário.
-  - `DES_EMAIL`: E-mail do usuário.
-  - `COD_MENSAGEM`: ID da mensagem associada ao usuário (chave estrangeira).
-  - `COD_SESSAO`: ID da sessão associada ao usuário (chave estrangeira).
+- Java Development Kit (JDK) 8 ou superior
+- MySQL Server 5.7 ou superior
+- JavaFX SDK para o desenvolvimento da interface gráfica
+- JDBC Driver para conexão com o banco de dados MySQL
 
-#### 2. SESSAO
-- **Descrição**: Registra as sessões de login e logout dos usuários.
-- **Colunas**:
-  - `COD_SESSAO`: ID da sessão (chave primária, auto-incremento).
-  - `DTA_LOGIN`: Data e hora do login.
-  - `DTA_LOGOUT`: Data e hora do logout.
+## Configuração do Ambiente
 
-#### 3. AMIGO
-- **Descrição**: Mantém o registro das amizades entre os usuários.
-- **Colunas**:
-  - `COD_AMIZADE`: ID da amizade (chave primária, auto-incremento).
-  - `QTA_AMIGO_USUARIO`: Quantidade de amigos que o usuário tem.
-  - `DES_AMIGO_USUARIO`: Descrição da amizade.
-  - `COD_AMIGO`: ID do amigo (usuário amigo).
-  - `COD_USUARIO`: ID do usuário (chave estrangeira).
+1. Instale a JDK apropriada para seu sistema operacional.
+2. Instale o MySQL Server e o MySQL Workbench.
+3. Instale o JavaFX SDK e configure-o em seu ambiente de desenvolvimento.
+4. Clone o repositório do projeto para sua máquina local.
 
-#### 4. MENSAGEM
-- **Descrição**: Armazena as mensagens trocadas entre os usuários.
-- **Colunas**:
-  - `COD_MENSAGEM`: ID da mensagem (chave primária, auto-incremento).
-  - `DES_MENSAGEM`: Conteúdo da mensagem.
-  - `DTA_ENVIO`: Data e hora de envio da mensagem.
-  - `COD_REMETENTE`: ID do usuário que enviou a mensagem.
-  - `COD_DESTINATARIO`: ID do usuário que recebeu a mensagem.
+## Configuração do Banco de Dados
 
-### Relacionamentos
+Execute os scripts SQL fornecidos para criar e configurar o banco de dados `RedeSocial`. Certifique-se de que o banco de dados esteja rodando antes de iniciar a aplicação.
 
-- **USUARIO -> MENSAGEM**: Um usuário pode estar associado a várias mensagens, mas cada mensagem está associada a apenas um usuário como remetente.
-- **USUARIO -> SESSAO**: Um usuário pode ter várias sessões, mas cada sessão está associada a apenas um usuário.
-- **AMIGO -> USUARIO**: A tabela AMIGO referencia a tabela USUARIO duas vezes: uma para o usuário e outra para o amigo, representando uma relação muitos-para-muitos entre os usuários.
+## Executando a Aplicação
 
-### Observações
+1. Abra o projeto no seu ambiente de desenvolvimento integrado (IDE) preferido.
+2. Resolva quaisquer dependências que possam estar faltando (normalmente, o IDE pode ajudar com isso).
+3. Execute a classe `Main` para iniciar a aplicação.
 
-- As tabelas `SESSAO` e `MENSAGEM` devem ser criadas antes da tabela `USUARIO` devido às dependências das chaves estrangeiras.
-- A coluna `COD_MENSAGEM` na tabela `USUARIO` sugere que cada usuário está associado a apenas uma mensagem. Se a intenção é associar várias mensagens a cada usuário, essa relação pode precisar ser revista.
-- A tabela `AMIGO` poderia potencialmente ser simplificada para apenas conter os IDs dos usuários amigos, removendo a necessidade da coluna `QTA_AMIGO_USUARIO` e `DES_AMIGO_USUARIO`, a menos que essas colunas sirvam a um propósito específico não evidente pela estrutura atual.
+## Estrutura do Projeto
 
----
+O projeto está estruturado da seguinte maneira:
+
+- `src/main/java/br/com/projeto/redesocial`: Contém o código-fonte da aplicação.
+  - `Main.java`: Classe principal que inicia a aplicação JavaFX.
+  - `MenuController.java`: Controlador responsável pela lógica da interface do menu principal.
+- `src/main/resources/br/com/projeto/redesocial`: Contém os arquivos FXML e recursos visuais.
+
+## Funcionalidades
+
+- Login de usuários
+- Exibição e gerenciamento de lista de amigos
+- Envio e recebimento de mensagens
+- Adição e remoção de amigos
